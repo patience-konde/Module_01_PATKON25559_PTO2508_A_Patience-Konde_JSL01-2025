@@ -1,0 +1,192 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  background-color: #f4f7fd;
+  color: #000;
+}
+
+/* APP LAYOUT */
+.app {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 260px;
+  background: #ffffff;
+  padding: 2rem;
+  border-right: 1px solid #e4ebfa;
+}
+/* LOGO CONTAINER */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 3rem;
+}
+
+/* ICON (3 vertical bars like Kanban logo) */
+.logo-icon {
+  display: flex;
+  gap: 4px;
+}
+
+.logo-icon span {
+  width: 6px;
+  height: 24px;
+  border-radius: 2px;
+  background-color: #635fc7;
+}
+
+.logo-icon span:nth-child(2) {
+  height: 24px;
+  opacity: 0.75;
+}
+
+.logo-icon span:nth-child(3) {
+  height: 24px;
+  opacity: 0.5;
+}
+
+/* LOGO TEXT */
+.logo-text {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #000;
+}
+
+
+.boards-title {
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  color: #828fa3;
+  margin-bottom: 1rem;
+}
+
+.board-btn {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 24px;
+  background: none;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: left;
+}
+
+.board-btn.active {
+  background: #635fc7;
+  color: #ffffff;
+}
+
+/* MAIN CONTENT */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* HEADER */
+.header {
+  background: #ffffff;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid #e4ebfa;
+}
+
+.board-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+/* COLUMNS */
+.columns {
+  display: flex;
+  gap: 1.5rem;
+  padding: 2rem;
+  overflow-x: auto;
+}
+
+/* COLUMN */
+.column {
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.column-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  color: #828fa3;
+}
+
+/* DOTS */
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.todo {
+  background: #49c4e5;
+}
+
+.doing {
+  background: #8471f2;
+}
+
+.done {
+  background: #67e2ae;
+}
+
+/* TASKS */
+.tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.task-card {
+  background: #ffffff;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  box-shadow: 0 4px 6px rgba(54, 78, 126, 0.1);
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  /* Hide sidebar on mobile */
+  .sidebar {
+    display: none;
+  }
+
+  /* Header padding */
+  .header {
+    padding: 1rem;
+  }
+
+  /* Make columns stack vertically */
+  .columns {
+    flex-direction: column;
+    padding: 1rem;
+    overflow-x: hidden;
+  }
+
+  /* Make each column full width */
+  .column {
+    min-width: 100%;
+  }
+}
+
